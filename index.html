@@ -7,11 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="icon" href="./favicon.ico" />
+    <!-- <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.ico" /> -->
 
     <!-- TITLE -->
     <title>Document</title>
+
+    <!-- Library of icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- BOOTSTRAP -->
     <link
@@ -32,6 +41,54 @@
     <script type="text/javascript" src="./JS/app.js" defer></script>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="chats col-4">
+          <header class="chats-header d-flex justify-content-between">
+            <div class="left-header">
+              <img src="" alt="" />
+              <p></p>
+            </div>
+            <div class="right-header">
+              <ul class="d-flex justify-content-between">
+                <li>
+                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+              </ul>
+            </div>
+          </header>
+        </div>
+
+        <div class="current-chat col-8">
+          <header class="current-chat-header d-flex justify-content-between">
+            <div class="left-header">
+              <img src="" alt="" />
+              <p></p>
+            </div>
+            <div class="right-header">
+              <ul class="d-flex justify-content-between">
+                <li>
+                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+              </ul>
+            </div>
+          </header>
+          <div class="chat-main"></div>
+          <footer class="chat-footer"></footer>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

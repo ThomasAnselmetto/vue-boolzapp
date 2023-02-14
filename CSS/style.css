@@ -1,1 +1,47 @@
+/* reset */
 
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+  line-height: 3.5;
+}
+/* bootstrap structure */
+.container {
+  height: 100vh;
+}
+.row {
+  height: 100%;
+}
+.chats {
+  background-color: rgb(52, 52, 25);
+  height: 100%;
+}
+
+.current-chat {
+  background-color: rgb(57, 220, 209);
+  height: 100%;
+}
+
+.chats-header {
+  width: 100%;
+  height: 60px;
+  background-color: blueviolet;
+}
+.current-chat-header {
+  width: 100%;
+  height: 60px;
+  background-color: blueviolet;
+}
+
+.right-header {
+  width: 20%;
+}
+.chat-footer {
+  height: 80px;
+  background-color: blue;
+}
+.chat-main {
+  height: calc(100% - 80px);
+}
