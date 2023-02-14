@@ -1,7 +1,11 @@
 /* reset */
-
+* {
+  margin: 0;
+  padding: 0;
+}
 img {
-  max-width: 100%;
+  border-radius: 50%;
+  max-height: 90%;
 }
 a {
   color: inherit;
@@ -19,7 +23,6 @@ ul {
   height: 100%;
 }
 .chats {
-  background-color: rgb(52, 52, 25);
   height: 100%;
 }
 
@@ -49,6 +52,7 @@ ul {
 }
 .chat-main {
   height: calc(100% - 60px - 60px);
+  overflow: auto;
 }
 
 .enter-message {
@@ -56,5 +60,32 @@ ul {
 }
 .chats-content {
   height: calc(100% - 60px);
+
   overflow: auto;
+}
+.notification {
+  height: 60px;
+  background-color: #8edafc;
+}
+.intestazione-chats {
+  height: 80px;
+}
+li > img {
+  max-width: 20%;
+}
+.bell {
+  color: #8edafc;
+  background-color: white;
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2.5;
+}
+
+.received {
+  background-color: white;
+}
+.sent {
+  background-color: #d5f9ba;
 }
