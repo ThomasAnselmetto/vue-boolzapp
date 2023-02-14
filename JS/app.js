@@ -167,3 +167,5 @@ const myApp = Vue.createApp({
     };
   },
 });
+
+myApp.mount("#root");
