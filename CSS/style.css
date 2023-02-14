@@ -3,6 +3,10 @@
 img {
   max-width: 100%;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 ul {
   list-style: none;
   line-height: 3.5;
@@ -20,7 +24,8 @@ ul {
 }
 
 .current-chat {
-  background-color: rgb(57, 220, 209);
+  background-image: url(https://theabbie.github.io/blog/assets/official-whatsapp-background-image.jpg);
+  background-size: cover;
   height: 100%;
 }
 
@@ -36,12 +41,20 @@ ul {
 }
 
 .right-header {
-  width: 20%;
+  width: 100px;
 }
 .chat-footer {
-  height: 80px;
+  height: 60px;
   background-color: blue;
 }
 .chat-main {
-  height: calc(100% - 80px);
+  height: calc(100% - 60px - 60px);
+}
+
+.enter-message {
+  width: 80%;
+}
+.chats-content {
+  height: calc(100% - 60px);
+  overflow: auto;
 }

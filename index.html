@@ -41,7 +41,7 @@
     <script type="text/javascript" src="./JS/app.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container my-3">
       <div class="row">
         <div class="chats col-4">
           <header class="chats-header d-flex justify-content-between">
@@ -52,17 +52,23 @@
             <div class="right-header">
               <ul class="d-flex justify-content-between">
                 <li>
-                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <a href=""><i class="fa-solid fa-circle-notch"></i></a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <a href=""><i class="fa-solid fa-message"></i></a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </li>
               </ul>
             </div>
           </header>
+          <div class="chats-content">
+            <ul>
+              <li>AAAAA</li>
+              
+            </ul>
+          </div>
         </div>
 
         <div class="current-chat col-8">
@@ -77,16 +83,26 @@
                   <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <a href=""><i class="fa-solid fa-paperclip"></i></a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></i></a>
                 </li>
               </ul>
             </div>
           </header>
           <div class="chat-main"></div>
-          <footer class="chat-footer"></footer>
+          <footer class="chat-footer d-flex justify-content-between p-2">
+            <a href=""><i class="fa-regular fa-face-smile"></i></a>
+
+            <input
+              class="enter-message"
+              type="text"
+              placeholder="Scrivi un messaggio"
+            />
+
+            <a href=""><i class="fa-solid fa-microphone"></i></a>
+          </footer>
         </div>
       </div>
     </div>
