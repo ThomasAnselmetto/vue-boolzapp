@@ -100,42 +100,46 @@
             </div>
     
             <div class="current-chat col-md-8">
-              <header class="current-chat-header d-flex justify-content-between pe-4">
-                <div class="left-header d-flex align-items-center">
-                    <img src="./img/avatar_1.jpg" alt="current-chat-img" class="avatar"/>
-                    
-                    <div class="intestazione-main-chat">
-                        <p class="open-chat-name my-0 ms-2"></p>
-                        <span class="latest-access my-0 ms-2"></span>
-                    </div>
-                </div>
-                <div class="right-header">
-                  <ul class="d-flex justify-content-between mt-3">
-                    <li>
-                      <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </li>
-                    <li>
-                      <a href=""><i class="fa-solid fa-paperclip"></i></a>
-                    </li>
-                    <li>
-                      <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </header>
-              <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
-                
-      
-                <div class="message received p-2 m-2">
-                  <p class="p-0 m-0"></p>
-                  <small class="message-date"></small>
-                </div>
-      
-                <div class="message sent p-2 m-2">
-                  <p class="p-0 m-0"></p>
-                  <small class="message-date"></small>
-                </div>
-            </div>
+              <div class="colonna-flex d-flex flex-column justify-content-between">
+
+                <header class="current-chat-header d-flex justify-content-between pe-4">
+                  <div class="left-header d-flex align-items-center">
+                      <img src="./img/avatar_1.jpg" alt="current-chat-img" class="avatar"/>
+                      
+                      <div class="intestazione-main-chat">
+                          <p class="open-chat-name my-0 ms-2"></p>
+                          <span class="latest-access my-0 ms-2"></span>
+                      </div>
+                  </div>
+                  <div class="right-header">
+                    <ul class="d-flex justify-content-between mt-3">
+                      <li>
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-solid fa-paperclip"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </header>
+  
+                <div v-for="message in contacts.messages"class="main-chat flex-grow-1 d-flex flex-column align-items-start">
+                  
+        
+                  <div class="message received p-2 m-2">
+                    <p class="p-0 m-0">{{message}}</p>
+                    <small class="message-date"></small>
+                  </div>
+        
+                  <div class="message sent p-2 m-2">
+                    <p class="p-0 m-0"></p>
+                    <small class="message-date"></small>
+                  </div>
+              </div>
+              </div>
                 
       
                
