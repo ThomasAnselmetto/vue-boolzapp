@@ -42,18 +42,18 @@
   </head>
 
   <body>
-    <div id="root">
+    <div id="app">
         
-        <div class="container my-3">
-          <div class="row">
+        <div class="container my-3 d-flex">
+          <!-- Header dei contatti -->
             <div class="chats col-md-4">
-              <header class="chats-header d-flex justify-content-between">
+              <header class="chats-header d-flex justify-content-between border pe-4">
                 <div class="left-header d-flex flex-wrap align-items-center">
-                  <img src="./img/avatar_io.jpg" alt="my-img" />
+                  <img src="./img/avatar_io.jpg" alt="my-img" class="avatar"/>
                   <p class="ms-2">Sofia</p>
                 </div>
                 <div class="right-header">
-                  <ul class="d-flex justify-content-between">
+                  <ul class="d-flex justify-content-between mt-3">
                     <li>
                       <a href=""><i class="fa-solid fa-circle-notch"></i></a>
                     </li>
@@ -66,46 +66,51 @@
                   </ul>
                 </div>
               </header>
-              <div class="chats-content ">
+              <div class="chats-content">
                   <div class="notification d-flex">
                       <div class="bell">
                           <i class="fa-solid fa-bell-slash"></i>
                         </div>
                         <div class="intestazione-main-chat">
-                            <p class="open-chat-name my-0 ms-2">Ricevi notifiche di nuovi messaggi</p>
-                            <p class="last-access my-0 ms-2">attiva notifiche desktop</p>
+                            <p class="open-chat-name my-0 ms-2 mb-10.">Ricevi notifiche di nuovi messaggi</p>
+                            <span class="latest-access my-0 ms-2"><u>Attiva le notifiche Desktop</u></span>
                         </div>
                     </div>
                     <div class="search-bar d-flex p-3">
-                        <button type="button" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <button type="button" class="search-btn p-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input class="search-bar p-2" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <ul>
-                        <li class="align-items-center d-flex"><img src="./img/avatar_1.jpg" alt="current-chat-img" />
-                            <div class="intestazione-chats">
-                                <p class="open-chat-name my-0 ms-2">Michele</p>
-                                <p class="last-access my-0 ms-2">ultimo accesso oggi alle ore 12:00</p>
-                            </div>
+                    
+                    <ul class="list-contacts flex-grow-1 m-0 p-0">
+                        <li v-for="contact in contacts" class="list-contacts--contact d-flex p-2">
+                          <div class="contact--left d-flex flex-grow-1">
+                            <img :src="contact.avatar" class="avatar" alt="" />
+                            <p class="my-0 mx-2">
+                              {{contact.name}}<br />
+                              <span class="latest-access">Ultimo accesso ore 12:00</span>
+                            </p>
+                          </div>
+              
+                          <span class="latest-access">12:00</span>
                         </li>
                     </ul>
+              
+              
                 </div>
             </div>
     
-                    
-                  
-    
             <div class="current-chat col-md-8">
-              <header class="current-chat-header d-flex justify-content-between">
+              <header class="current-chat-header d-flex justify-content-between pe-4">
                 <div class="left-header d-flex align-items-center">
-                    <img src="./img/avatar_1.jpg" alt="current-chat-img" />
+                    <img src="./img/avatar_1.jpg" alt="current-chat-img" class="avatar"/>
                     
                     <div class="intestazione-main-chat">
-                        <p class="open-chat-name my-0 ms-2">Michele</p>
-                        <small class="last-access my-0 ms-2">ultimo accesso oggi alle ore 12:00</small>
+                        <p class="open-chat-name my-0 ms-2"></p>
+                        <span class="latest-access my-0 ms-2"></span>
                     </div>
                 </div>
                 <div class="right-header">
-                  <ul class="d-flex justify-content-between">
+                  <ul class="d-flex justify-content-between mt-3">
                     <li>
                       <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
@@ -118,11 +123,33 @@
                   </ul>
                 </div>
               </header>
-              <div class="row chat-main mt-4">
-                <div class="col-md-4 offset-md-1  "><div class="card received p-2">messaggio in entrata</div></div>
-                <div class="col-4 offset-md-7 "><div class="card sent p-2">messaggio in uscita</div>
+              <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
+                
+      
+                <div class="message received p-2 m-2">
+                  <p class="p-0 m-0"></p>
+                  <small class="message-date"></small>
                 </div>
+      
+                <div class="message sent p-2 m-2">
+                  <p class="p-0 m-0"></p>
+                  <small class="message-date"></small>
                 </div>
+            </div>
+                
+      
+               
+      
+                
+               
+      
+      
+                
+      
+                
+                
+                    
+                
                 
     
               <footer class="chat-footer d-flex justify-content-between p-2">
@@ -132,7 +159,7 @@
                 </div>
     
                 <input
-                  class="enter-message"
+                  class="enter-message px-2"
                   type="text"
                   placeholder="Scrivi un messaggio"
                 />
@@ -142,8 +169,11 @@
     
               </footer>
             </div>
-          </div>
+          
         </div>
     </div>
   </body>
 </html>
+                    
+                  
+    
