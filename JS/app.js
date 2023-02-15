@@ -166,9 +166,6 @@ const myApp = Vue.createApp({
       ],
     };
   },
-  //   methods:{
-
-  //   }
 });
 
 myApp.mount("#app");
