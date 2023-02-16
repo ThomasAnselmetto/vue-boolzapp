@@ -164,7 +164,16 @@ const myApp = Vue.createApp({
           ],
         },
       ],
+      // Contatto Attivo
+
+      activeContact: 0,
     };
+  },
+
+  methods: {
+    openChat(i) {
+      this.activeContact = i;
+    },
   },
 });
 

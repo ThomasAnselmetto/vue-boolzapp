@@ -11,7 +11,7 @@
     <link rel="icon" href="./favicon.ico" /> -->
 
     <!-- TITLE -->
-    <title>Document</title>
+    <title>Boolzap</title>
 
     <!-- Library of icons -->
     <link
@@ -31,7 +31,7 @@
     />
 
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="./CSS/style.css" />chat-f
+    <link rel="stylesheet" href="./CSS/style.css" />
 
     <!-- VUE JS -->
 
@@ -82,12 +82,19 @@
                     </div>
                     
                     <ul class="list-contacts flex-grow-1 m-0 p-0">
-                        <li @click="" v-for="contact in contacts" class="list-contacts--contact contact--active d-flex p-2">
-                          <div class="contact--left d-flex flex-grow-1">
+                        <li v-for="(contact,contactIndex) in contacts" 
+                        @click="openChat(contactIndex)"
+                        :class="(contactIndex == activeContact) ? 'contact--active':''"
+                        class="list-contacts--contact d-flex p-2" 
+                        
+                        >
+                          <div class="contact--left d-flex flex-grow-1"
+                         
+                          >
                             <img :src="contact.avatar" class="avatar" alt="" />
                             <p class="my-0 mx-2">{{contact.name}}
                               <br />
-                              <span class="latest-access">Ultimo accesso ore 12:00</span>
+                              <span class="latest-message latest-access">{{contact.messages[activeContact].text}}</span>
                             </p>
                           </div>
               
@@ -107,8 +114,8 @@
                 <div class="left-header d-flex align-items-center">
                     <img src="./img/avatar_1.jpg" alt="current-chat-img" class="avatar"/>
                     
-                    <div  class="intestazione-main-chat">
-                        <p class="open-chat-name my-0 ms-2">Michele</p>
+                    <div class="intestazione-main-chat">
+                        <p class="open-chat-name my-0 ms-2"></p>
                         <span class="latest-access my-0 ms-2">ultimo accesso oggi alle ore 12:00</span>
                     </div>
                 </div>
@@ -126,18 +133,23 @@
                   </ul>
                 </div>
               </header>
+
+              
               <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
-                
-                
-
-
-      
-                <div class="message p-2 m-2">
-                  <p v-for="(message,index) in contacts[0].messages"class="p-0 m-0"></p>
+                <div v-for="(message,index) in contacts[activeContact].messages"
+                class="message p-2 m-5"
+                :class="(message.status == "sent" ) ? 'message sent' : 'message received' ">
+                  <p class="p-0 m-0">{{message.text}}</p>
                   <small class="message-date">12:30</small>
                 </div>
-      
               </div>
+                
+                  
+                
+
+
+      
+      
               <footer class="chat-footer d-flex justify-content-between p-2">
                   
                 <div class="emoji d-flex  align-items-center ms-5">
