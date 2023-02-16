@@ -165,13 +165,12 @@ const myApp = Vue.createApp({
         },
       ],
       // Contatto Attivo
-
-      activeContact: 0,
+      activeContact: 1,
     };
   },
 
   methods: {
-    openChat(i) {
+    openChat: function (i) {
       this.activeContact = i;
     },
   },

@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FAVICON -->
-    <!-- <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="icon" href="./favicon.ico" /> -->
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
 
     <!-- TITLE -->
     <title>Boolzap</title>
 
-    <!-- Library of icons -->
+    <!-- FONT AWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -31,160 +31,130 @@
     />
 
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <!-- MAIN JS -->
-    <script type="text/javascript" src="./JS/app.js" defer></script>
+    <!-- APP JS -->
+    <script type="text/javascript" src="./js/app.js" defer></script>
   </head>
 
   <body>
-    <div id="app">
-        
-        <div class="container my-3 d-flex">
-          <!-- Header dei contatti -->
-            <div class="chats col-md-4">
-              <header class="chats-header d-flex justify-content-between border pe-4">
-                <div class="left-header d-flex flex-wrap align-items-center">
-                  <img src="./img/avatar_io.jpg" alt="my-img" class="avatar"/>
-                  <p class="ms-2">Sofia</p>
-                </div>
-                <div class="right-header">
-                  <ul class="d-flex justify-content-between mt-3">
-                    <li>
-                      <a href=""><i class="fa-solid fa-circle-notch"></i></a>
-                    </li>
-                    <li>
-                      <a href=""><i class="fa-solid fa-message"></i></a>
-                    </li>
-                    <li>
-                      <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </header>
-              <div class="chats-content">
-                  <div class="notification d-flex">
-                      <div class="bell">
-                          <i class="fa-solid fa-bell-slash"></i>
-                        </div>
-                        <div class="intestazione-main-chat">
-                            <p class="open-chat-name my-0 ms-2 mb-10.">Ricevi notifiche di nuovi messaggi</p>
-                            <span class="latest-access my-0 ms-2"><u>Attiva le notifiche Desktop</u></span>
-                        </div>
-                    </div>
-                    <div class="search-bar d-flex p-3">
-                        <button type="button" class="search-btn p-2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input class="search-bar p-2" type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-                    
-                    <ul class="list-contacts flex-grow-1 m-0 p-0">
-                        <li v-for="(contact,contactIndex) in contacts" 
-                        @click="openChat(contactIndex)"
-                        :class="(contactIndex == activeContact) ? 'contact--active':''"
-                        class="list-contacts--contact d-flex p-2" 
-                        
-                        >
-                          <div class="contact--left d-flex flex-grow-1"
-                         
-                          >
-                            <img :src="contact.avatar" class="avatar" alt="" />
-                            <p class="my-0 mx-2">{{contact.name}}
-                              <br />
-                              <span class="latest-message latest-access">{{contact.messages[activeContact].text}}</span>
-                            </p>
-                          </div>
-              
-                          <span class="latest-access">12:00</span>
-                        </li>
-                    </ul>
-              
-              
-                </div>
-            </div>
-    
-                    
-                  
-    
-            <div class="current-chat col-md-8">
-              <header class="current-chat-header d-flex justify-content-between pe-4">
-                <div class="left-header d-flex align-items-center">
-                    <img src="./img/avatar_1.jpg" alt="current-chat-img" class="avatar"/>
-                    
-                    <div class="intestazione-main-chat">
-                        <p class="open-chat-name my-0 ms-2"></p>
-                        <span class="latest-access my-0 ms-2">ultimo accesso oggi alle ore 12:00</span>
-                    </div>
-                </div>
-                <div class="right-header">
-                  <ul class="d-flex justify-content-between mt-3">
-                    <li>
-                      <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </li>
-                    <li>
-                      <a href=""><i class="fa-solid fa-paperclip"></i></a>
-                    </li>
-                    <li>
-                      <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </header>
+    <div id="app" class="app">
+      <!-- CONTACTS LEFT COLUMN -->
+      <section class="contacts-col d-flex flex-column">
+        <!-- HEADER CONTACTS COL -->
+        <header class="contacts-col--header d-flex justify-content-between p-2">
+          <div class="d-flex align-items-center">
+            <img src="./img/avatar_io.jpg" class="avatar" alt="" />
+            <p class="my-0 mx-2">Sofia</p>
+          </div>
+          <div class="d-flex align-items-center icons">
+            <i class="fa-solid fa-circle-notch mx-2"></i>
+            <i class="fa-solid fa-message mx-2"></i>
+            <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
+          </div>
+        </header>
 
-              
-              <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
-                <div v-for="(message,index) in contacts[activeContact].messages"
-                class="message p-2 m-5"
-                :class="(message.status == "sent" ) ? 'message sent' : 'message received' ">
-                  <p class="p-0 m-0">{{message.text}}</p>
-                  <small class="message-date">12:30</small>
-                </div>
-              </div>
-                
-                  
-                
-
-
-      
-      
-              <footer class="chat-footer d-flex justify-content-between p-2">
-                  
-                <div class="emoji d-flex  align-items-center ms-5">
-                  <a href=""><i class="fa-regular fa-face-smile"></i></a>
-                </div>
-    
-                <input
-                  class="enter-message px-2"
-                  type="text"
-                  placeholder="Scrivi un messaggio"
-                />
-                <div class="audio d-flex align-items-center ms-5">
-                    <a href=""><i class="fa-solid fa-microphone"></i></a>
-                </div>
-                
-              </footer>
-            </div>
-          
+        <!-- DISCLAIMER CONTACTS COL -->
+        <div class="disclaimer d-flex align-items-center p-2">
+          <div class="avatar">
+            <i class="fa-solid fa-bell-slash"></i>
+          </div>
+          <p class="my-0 mx-2">
+            Ricevi notifiche di nuovi messaggi<br />
+            <a href="#" class="disclaimer-link"> Attiva notifiche desktop </a>
+          </p>
         </div>
+
+        <!-- SEARCH CONTACTS -->
+        <div class="search-contacts d-flex align-items-center p-2">
+          <div class="search-contacts--icon p-2">
+            <i class="fa-solid fa-magnifying-glass mx-2"></i>
+          </div>
+          <input
+            class="p-2"
+            type="text"
+            placeholder="Cerca o inizia una nuova chat"
+          />
+        </div>
+
+        <!-- LIST CONTACTS -->
+        <ul class="list-contacts flex-grow-1 m-0 p-0">
+          <li
+            v-for="(contact, contactIndex) in contacts"
+            @click="openChat(contactIndex)"
+            :class="(contactIndex == activeContact) ? 'contact--active':''"
+            class="list-contacts--contact d-flex p-2"
+          >
+            <div class="contact--left d-flex flex-grow-1">
+              <img :src="contact.avatar" class="avatar" alt="" />
+              <p class="my-0 mx-2">
+                {{contact.name}}<br />
+                <span v-for="message in contact.messages" class="latest-access"
+                  >{{message.text}}}</span
+                >
+              </p>
+            </div>
+
+            <span class="latest-access">12:00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CHAT RIGHT COLUMN -->
+      <section class="chat-col d-flex flex-column">
+        <!-- HEADER CHAT COL -->
+        <header class="contacts-col--header d-flex justify-content-between p-2">
+          <div
+            v-for="(contact,index) in contacts"
+            class="d-flex align-items-center"
+          >
+            <img src="./img/avatar_1.jpg" class="avatar" alt="" />
+            <p class="my-0 mx-2">
+              {{contact.name}}<br />
+              <span class="latest-access">Ultimo accesso ore 12:00</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center icons">
+            <i class="fa-solid fa-magnifying-glass mx-2"></i>
+            <i class="fa-solid fa-paperclip mx-2"></i>
+            <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
+          </div>
+        </header>
+
+        <!-- MAIN CHAT -->
+        <div
+          v-for="message in contacts[activeContact].messages"
+          class="main-chat flex-grow-1 d-flex flex-column align-items-start"
+        >
+          <div
+            class="message p-2 mx-4 mt-4"
+            :class="(message.status == 'received') ? 'received' : 'sent' "
+          >
+            <p class="p-0 m-0">{{message.text}}</p>
+            <small class="message-date">16:12</small>
+          </div>
+        </div>
+
+        <!-- SEND MESSAGE -->
+        <footer class="send-message-bar d-flex py-3">
+          <div class="d-flex align-items-center icons px-4 py-2">
+            <i class="fa-regular fa-face-smile mx-2"></i>
+          </div>
+          <div class="flex-grow-1">
+            <input
+              type="text"
+              placeholder="Scrivi un messaggio"
+              class="send-message-input px-4 p-2"
+            />
+          </div>
+          <div class="d-flex align-items-center icons px-4 py-2">
+            <i class="fa-solid fa-microphone mx-2"></i>
+          </div>
+        </footer>
+      </section>
     </div>
   </body>
 </html>
-              
-      
-                
-      
-                
-               
-      
-      
-                
-      
-                
-                
-                    
-                
-                
-    
