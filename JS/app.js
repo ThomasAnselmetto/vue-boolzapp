@@ -166,12 +166,23 @@ const myApp = Vue.createApp({
       ],
       // Contatto Attivo
       activeContact: 1,
+      newMessage: "",
     };
   },
 
   methods: {
     openChat: function (i) {
       this.activeContact = i;
+    },
+    addMessage(input) {
+      const newMessage = {
+        date: "10/01/2020 15:51:00",
+        text: this.newMessage,
+        status: "sent",
+      };
+      this.contacts[this.activeContact].messages.push(newMessage);
+
+      this.newMessage = "";
     },
   },
 });

@@ -107,13 +107,10 @@
       <section class="chat-col d-flex flex-column">
         <!-- HEADER CHAT COL -->
         <header class="contacts-col--header d-flex justify-content-between p-2">
-          <div
-            v-for="(contact,index) in contacts"
-            class="d-flex align-items-center"
-          >
+          <div class="d-flex align-items-center">
             <img src="./img/avatar_1.jpg" class="avatar" alt="" />
             <p class="my-0 mx-2">
-              {{contact.name}}<br />
+              <br />
               <span class="latest-access">Ultimo accesso ore 12:00</span>
             </p>
           </div>
@@ -145,6 +142,8 @@
           </div>
           <div class="flex-grow-1">
             <input
+              v-model="newMessage"
+              @keyUp.enter="addMessage(newMessage)"
               type="text"
               placeholder="Scrivi un messaggio"
               class="send-message-input px-4 p-2"
