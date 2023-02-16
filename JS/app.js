@@ -180,9 +180,19 @@ const myApp = Vue.createApp({
         text: this.newMessage,
         status: "sent",
       };
+      const newMessage2 = {
+        date: "10/01/2020 15:51:00",
+        text: "OK frate",
+        status: "received",
+      };
       this.contacts[this.activeContact].messages.push(newMessage);
 
       this.newMessage = "";
+
+      const myTimeout = setTimeout(myAnswer, 1000);
+      function myAnswer() {
+        this.contacts[this.activeContact].messages.push(newMessage2);
+      }
     },
   },
 });

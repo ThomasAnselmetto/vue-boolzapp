@@ -143,6 +143,7 @@
           <div class="flex-grow-1">
             <input
               v-model="newMessage"
+              v-model="setTimeout()"
               @keyUp.enter="addMessage(newMessage)"
               type="text"
               placeholder="Scrivi un messaggio"
